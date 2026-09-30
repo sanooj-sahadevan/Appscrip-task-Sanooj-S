@@ -1,7 +1,17 @@
 import type { Product } from "@/types/product";
 import { unstable_rethrow } from "next/navigation";
 
-const PRODUCTS_API_URL = "https://fakestoreapi.com/products";
+const PRODUCTS_API_URL =
+	"https://dummyjson.com/products?limit=20&select=id,title,description,price,category,thumbnail";
+
+interface ApiProduct {
+	id: number;
+	title: string;
+	description: string;
+	price: number;
+	category: string;
+	thumbnail: string;
+}
 
 export async function getProducts(): Promise<Product[]> {
 	try {
@@ -16,16 +26,28 @@ export async function getProducts(): Promise<Product[]> {
 		}
 
 		const data: unknown = await response.json();
-		if (!Array.isArray(data)) {
+		if (
+			!data ||
+			typeof data !== "object" ||
+			!("products" in data) ||
+			!Array.isArray(data.products)
+		) {
 			console.error("Product API returned an invalid payload");
 			return [];
 		}
 
-		const products = data.filter(isProduct);
-		if (data.length > 0 && products.length === 0) {
-			console.error(`Product API returned ${data.length} invalid products`);
+		const products = data.products.filter(isApiProduct);
+		if (data.products.length > 0 && products.length === 0) {
+			console.error(`Product API returned ${data.products.length} invalid products`);
 		}
-		return products;
+		return products.map(({ id, title, description, price, category, thumbnail }) => ({
+			id,
+			title,
+			description,
+			price,
+			category,
+			image: thumbnail,
+		}));
 	} catch (error) {
 		unstable_rethrow(error);
 		console.error("Unable to load products from API:", error);
@@ -33,18 +55,15 @@ export async function getProducts(): Promise<Product[]> {
 	}
 }
 
-function isProduct(value: unknown): value is Product {
+function isApiProduct(value: unknown): value is ApiProduct {
 	if (!value || typeof value !== "object") return false;
-	const product = value as Partial<Product>;
+	const product = value as Partial<ApiProduct>;
 	return (
 		typeof product.id === "number" &&
 		typeof product.title === "string" &&
 		typeof product.description === "string" &&
 		typeof product.price === "number" &&
 		typeof product.category === "string" &&
-		typeof product.image === "string" &&
-		(!product.rating ||
-			(typeof product.rating.rate === "number" &&
-				typeof product.rating.count === "number"))
+		typeof product.thumbnail === "string"
 	);
 }
