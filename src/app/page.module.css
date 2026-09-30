@@ -1,150 +1,99 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 80px;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 18px 0 0 0;
+	color: #888792;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.breadcrumbLink {
+	text-decoration: none;
+	color: #888792;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.breadcrumbLink:hover {
+	color: #252020;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.breadcrumbSeparator {
+	color: #e5e5e5;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.breadcrumbCurrent {
+	color: #252020;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+.hero {
+	max-width: 720px;
+	margin: 32px auto 40px;
+	text-align: center;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+.title {
+	margin: 0;
+	font-size: clamp(24px, 4vw, 40px);
+	font-weight: 400;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #252020;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.description {
+	max-width: 600px;
+	margin: 16px auto 0;
+	font-family: var(--font-simplon);
+	color: #252020;
+	font-size: 16px;
+	line-height: 1.6;
+	letter-spacing: 0.2px;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+@media (max-width: 1024px) {
+	.page {
+		padding: 0 32px;
+	}
+
+	.hero {
+		margin: 28px auto 28px;
+	}
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+@media (max-width: 768px) {
+	.page {
+		padding: 0 16px;
+	}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
+	.breadcrumb {
+		padding: 14px 0 0 0;
+		font-size: 11px;
+	}
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
+	.hero {
+		margin: 20px auto 24px;
+		text-align: center;
+	}
 
-  .intro {
-    gap: 16px;
-  }
+	.title {
+		font-size: 22px;
+		letter-spacing: 0.5px;
+	}
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
-}
-
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+	.description {
+		font-size: 13px;
+		line-height: 1.5;
+		margin-top: 12px;
+		padding: 0 4px;
+	}
 }

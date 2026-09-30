@@ -1,0 +1,123 @@
+.plp-client {
+	width: 100%;
+}
+
+.plp-client__filter-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.plp-client__filter-left {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+}
+
+.plp-client__item-count {
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	color: #252020;
+	text-transform: uppercase;
+}
+
+.plp-client__filter-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: var(--font-caslon);
+	letter-spacing: 0.5px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-decoration: underline;
+	color: #888792;
+	text-underline-offset: 4px;
+	transition: color 0.2s ease;
+}
+
+.plp-client__filter-toggle:hover {
+	color: #252020;
+}
+
+.plp-client__filter-right {
+	display: flex;
+	align-items: center;
+}
+
+.plp-client__content {
+	display: flex;
+	align-items: flex-start;
+	gap: 32px;
+	padding-top: 32px;
+}
+
+.plp-client__grid-wrapper {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+	.plp-client__item-count {
+		display: none;
+	}
+
+	.plp-client__filter-bar {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 14px 0;
+		position: relative;
+	}
+
+	.plp-client__filter-left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0;
+		border-right: 1px solid #e5e5e5;
+	}
+
+	.plp-client__filter-right {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.plp-client__filter-toggle {
+		text-decoration: none;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		color: #252020;
+		text-transform: uppercase;
+		gap: 0;
+	}
+
+	.plp-client__filter-toggle svg {
+		display: none;
+	}
+
+	.plp-client__filter-toggle span {
+		font-size: 0;
+	}
+
+	.plp-client__filter-toggle span::after {
+		content: "FILTER";
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+	}
+
+	.plp-client__content {
+		flex-direction: column;
+		gap: 16px;
+		padding-top: 16px;
+	}
+}
