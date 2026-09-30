@@ -1,11 +1,12 @@
 import type { Product } from "@/types/product";
+import { unstable_rethrow } from "next/navigation";
 
 const PRODUCTS_API_URL = "https://fakestoreapi.com/products";
 
 export async function getProducts(): Promise<Product[]> {
 	try {
 		const response = await fetch(PRODUCTS_API_URL, {
-			next: { revalidate: 3600 },
+			cache: "no-store",
 			headers: { Accept: "application/json" },
 		});
 
@@ -15,10 +16,18 @@ export async function getProducts(): Promise<Product[]> {
 		}
 
 		const data: unknown = await response.json();
-		if (!Array.isArray(data)) return [];
+		if (!Array.isArray(data)) {
+			console.error("Product API returned an invalid payload");
+			return [];
+		}
 
-		return data.filter(isProduct);
+		const products = data.filter(isProduct);
+		if (data.length > 0 && products.length === 0) {
+			console.error(`Product API returned ${data.length} invalid products`);
+		}
+		return products;
 	} catch (error) {
+		unstable_rethrow(error);
 		console.error("Unable to load products from API:", error);
 		return [];
 	}
