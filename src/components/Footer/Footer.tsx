@@ -64,8 +64,8 @@ export default function Footer() {
 						</h2>
 						<div className={styles.footer__currency}>
 							<Image
-								src="/images/united-states-flag.png"
-								alt="United States flag"
+								src="/images/usflag.png.png"
+								alt="USA Flag"
 								width={24}
 								height={24}
 								className={styles["footer__currency-flag-img"]}
@@ -93,8 +93,8 @@ export default function Footer() {
 						</h2>
 						<div className={styles.footer__currency}>
 							<Image
-								src="/images/united-states-flag.png"
-								alt="United States flag"
+								src="/images/usflag.png.png"
+								alt="USA Flag"
 								width={24}
 								height={24}
 								className={styles["footer__currency-flag-img"]}

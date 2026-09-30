@@ -9,14 +9,14 @@ import { generateCollectionSchema } from "@/lib/utils";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-	title: "Shop the Collection",
+	title: "Discover Our Products | LOGO",
 	description:
-		"Discover thoughtfully selected fashion, accessories, and everyday essentials from Metta Muse.",
+		"Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut elementum dolor.",
 	keywords: ["products", "fashion", "accessories", "shop"],
 	openGraph: {
-		title: "Shop the Collection | Metta Muse",
+		title: "Discover Our Products | LOGO",
 		description:
-			"Discover thoughtfully selected fashion, accessories, and everyday essentials from Metta Muse.",
+			"Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus scelerisque.",
 		type: "website",
 	},
 };

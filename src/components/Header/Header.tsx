@@ -17,7 +17,7 @@ export default function Header() {
 						<span className={styles["header__announcement-icon"]}>
 							<Image
 								src="/images/announcement.png"
-								alt=""
+								alt="Announcement Icon"
 								width={14}
 								height={14}
 							/>
@@ -45,7 +45,7 @@ export default function Header() {
 					<div className={styles["header__brand-icon"]} aria-hidden="true">
 						<Image
 							src="/images/logo.png"
-							alt=""
+							alt="Brand Logo"
 							width={55}
 							height={55}
 							priority

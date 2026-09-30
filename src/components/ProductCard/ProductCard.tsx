@@ -17,7 +17,7 @@ export default function ProductCard({
 	isWishlisted = false,
 	onToggleWishlist,
 }: ProductCardProps) {
-	const formattedAlt = `${product.title}, ${product.category}`;
+	const formattedAlt = `Product: ${product.title} - ${product.category}`;
 	const isNew = product.id === 1 || product.id === 5;
 	const isOutOfStock = product.id === 2;
 

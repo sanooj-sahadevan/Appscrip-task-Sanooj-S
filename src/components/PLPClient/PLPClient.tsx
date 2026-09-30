@@ -36,7 +36,7 @@ export default function PLPClient({ products }: PLPClientProps) {
 			<div className={styles["plp-client__filter-bar"]}>
 				<div className={styles["plp-client__filter-left"]}>
 					<span className={styles["plp-client__item-count"]}>
-						{totalCount} ITEMS
+						{SITE_TEXT.filter.itemsCount || `${totalCount} ITEMS`}
 					</span>
 					<button
 						type="button"

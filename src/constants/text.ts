@@ -1,10 +1,10 @@
 export const SITE_TEXT = {
-	brandName: "METTA MUSE",
-	tagline: "Thoughtful finds for everyday living.",
+	brandName: "LOGO",
+	tagline: "Lorem ipsum dolor",
 	announcements: [
-		"FREE SHIPPING ON ORDERS OVER $100",
-		"NEW ARRIVALS EVERY WEEK",
-		"THOUGHTFULLY CURATED FINDS",
+		"Lorem ipsum dolor",
+		"Lorem ipsum dolor",
+		"Lorem ipsum dolor",
 	],
 	breadcrumb: {
 		home: "HOME",
@@ -14,7 +14,7 @@ export const SITE_TEXT = {
 		eyebrow: "",
 		title: "DISCOVER OUR PRODUCTS",
 		description:
-			"Explore a considered collection of fashion, accessories, and everyday essentials.",
+			"Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut elementum dolor.",
 	},
 	nav: [
 		{ label: "SHOP", href: "/" },
@@ -24,6 +24,7 @@ export const SITE_TEXT = {
 		{ label: "CONTACT US", href: "/" },
 	],
 	filter: {
+		itemsCount: "3425 ITEMS",
 		hideFilter: "HIDE FILTER",
 		showFilter: "SHOW FILTER",
 		filterMobile: "FILTER",
