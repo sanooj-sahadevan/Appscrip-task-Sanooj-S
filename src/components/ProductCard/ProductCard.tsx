@@ -44,10 +44,20 @@ export default function ProductCard({
 			</div>
 
 			<div className={styles["product-card__info"]}>
-				<div className={styles["product-card__header-row"]}>
-					<h3 className={styles["product-card__title"]} title={product.title}>
-						{product.title}
-					</h3>
+				<h3 className={styles["product-card__title"]} title={product.title}>
+					{product.title}
+				</h3>
+				<div className={styles["product-card__pricing-row"]}>
+					<p className={styles["product-card__pricing"]}>
+						<Link href="/" className={styles["product-card__signin-link"]}>
+							{SITE_TEXT.productCard.signIn}
+						</Link>{" "}
+						or{" "}
+						<Link href="/" className={styles["product-card__signin-link"]}>
+							{SITE_TEXT.productCard.createAccount}
+						</Link>{" "}
+						{SITE_TEXT.productCard.toSeePricing}
+					</p>
 					<button
 						type="button"
 						className={`${styles["product-card__wishlist"]} ${
@@ -75,17 +85,6 @@ export default function ProductCard({
 						</svg>
 					</button>
 				</div>
-
-				<p className={styles["product-card__pricing"]}>
-					<Link href="/" className={styles["product-card__signin-link"]}>
-						{SITE_TEXT.productCard.signIn}
-					</Link>{" "}
-					or{" "}
-					<Link href="/" className={styles["product-card__signin-link"]}>
-						{SITE_TEXT.productCard.createAccount}
-					</Link>{" "}
-					{SITE_TEXT.productCard.toSeePricing}
-				</p>
 			</div>
 		</article>
 	);

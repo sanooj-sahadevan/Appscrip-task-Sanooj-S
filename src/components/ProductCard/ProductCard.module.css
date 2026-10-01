@@ -65,11 +65,12 @@
 	min-width: 0;
 }
 
-.product-card__header-row {
+.product-card__pricing-row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 6px;
+	min-width: 0;
 }
 
 .product-card__title {
@@ -90,6 +91,7 @@
 	font-size: 11px;
 	color: #888792;
 	margin: 0;
+	flex: 1;
 	min-width: 0;
 	overflow: hidden;
 	text-overflow: ellipsis;

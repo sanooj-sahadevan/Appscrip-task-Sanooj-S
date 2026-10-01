@@ -6,7 +6,7 @@
 }
 
 .breadcrumb {
-	display: flex;
+	display: none;
 	align-items: center;
 	gap: 10px;
 	padding: 18px 0 0 0;
@@ -76,6 +76,7 @@
 	}
 
 	.breadcrumb {
+		display: flex;
 		padding: 14px 0 0 0;
 		font-size: 11px;
 	}

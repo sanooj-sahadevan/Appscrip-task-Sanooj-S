@@ -2,7 +2,7 @@ import type { Product } from "@/types/product";
 import { unstable_rethrow } from "next/navigation";
 
 const PRODUCTS_API_URL =
-	"https://dummyjson.com/products?limit=20&select=id,title,description,price,category,thumbnail";
+	"https://dummyjson.com/products?limit=18&select=id,title,description,price,category,thumbnail";
 
 interface ApiProduct {
 	id: number;
@@ -16,7 +16,7 @@ interface ApiProduct {
 export async function getProducts(): Promise<Product[]> {
 	try {
 		const response = await fetch(PRODUCTS_API_URL, {
-			cache: "no-store",
+			next: { revalidate: 3600 },
 			headers: { Accept: "application/json" },
 		});
 
